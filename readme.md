@@ -2,6 +2,8 @@
 ------------------
 (C) 2010 by Christof Konstantinopoulos
 
+*Project reactivated in July 2020*
+
 This program simulates hardware devices at the serial port. 
 It can also "learn" the communication behaviour of real
 devices.
