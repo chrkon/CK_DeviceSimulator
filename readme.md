@@ -14,3 +14,4 @@ Use "Virtual Serial Port Drivers" to connect the simulator with
 the other local Software. The optional connection to the real device
 is done via the real serial ports.
 
+A short Prezi presentation is stored under this link: https://prezi.com/bzcfkrpkoh5q/ck-device-simulator/
