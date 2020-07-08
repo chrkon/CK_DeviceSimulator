@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--  RS232 Device Simulator Definition File  -->
+<!--  (C) Christof Konstantinopoulos, September 2010  -->
+<!--- -->
+<!--  Control bytes have be encoded into default string terms:  -->
+<!--  Examples : ASCII $0D = [CR], ASCII $06 = [ACK]  -->
+<!--  see http://en.wikipedia.org/wiki/ASCII for more details  -->
+<Device>
+  <Name>RS232 Test Device</Name>
+  <Seperators>
+    <Seperator>[CR][LF]</Seperator>
+    <Seperator>[ACK]</Seperator>
+  </Seperators>
+  <ErrorAnswer>
+    <Out Delay="100">[NAK]</Out>
+  </ErrorAnswer>
+  <Commands>
+    <Command>
+      <In>Info[CR][LF]</In>
+      <Answer>
+        <Out Delay="100">RS232 Device Simulator - EBC 2.0[CR][LF]</Out>
+        <Out Delay="100">(C) Christof Konstantinopoulos, 2010-10-15[CR][LF]</Out>
+        <Out Delay="250">Homepage : www.konstantinopoulos.de[CR][LF]</Out>
+        <Out Delay="250">E-Mail   : chrkon@web.de[CR][LF][BEL]</Out>
+      </Answer>
+    </Command>
+    <Command>
+      <In>Test[CR][LF]</In>
+      <Answer>
+        <Out Delay="1000">Test CK, Long running result, 22.8.2010[CR][LF]</Out>
+        <Out Delay="200">&gt; </Out>
+        <Out Delay="1000">3 </Out>
+        <Out Delay="1000">2 </Out>
+        <Out Delay="1000">1 </Out>
+        <Out Delay="500"> = Test OK &lt;[CR][LF]</Out>
+      </Answer>
+      <Answer>
+        <Out Delay="1000">Different Answer! 22.8.2010[CR][LF]</Out>
+      </Answer>
+      <Answer>
+        <Out Delay="100">NewTest by CK, 15.10.2010[CR][LF]</Out>
+        <Out Delay="1000">5[CR][LF]</Out>
+        <Out Delay="1000">4[CR][LF]</Out>
+        <Out Delay="1000">3[CR][LF]</Out>
+        <Out Delay="1000">2[CR][LF]</Out>
+        <Out Delay="1000">1[CR][LF]</Out>
+        <Out Delay="250">OK[CR][LF]</Out>
+      </Answer>
+    </Command>
+    <Command>
+      <In>A[CR][LF]</In>
+      <Answer>
+        <Out Delay="1106">A Hallo,5,12345[CR][LF]</Out>
+      </Answer>
+    </Command>
+    <Command>
+      <In>Ea[CR][LF]</In>
+      <Answer>
+        <Out Delay="880">Ea 200.45, 89.343,332.3[CR][LF]</Out>
+      </Answer>
+      <Answer>
+        <Out Delay="880">Ea 800.45, 89.343,332.3[CR][LF]</Out>
+      </Answer>
+      <Answer>
+        <Out Delay="880">Ea 400.45, 89.343,332.3[CR][LF]</Out>
+      </Answer>
+    </Command>
+  </Commands>
+</Device>

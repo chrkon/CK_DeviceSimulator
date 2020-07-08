@@ -1,0 +1,40 @@
+﻿<Window x:Class="ebcDeviceSimulator.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Device Simulation GUI - Simulation Mode" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="Command from PC" Height="28" HorizontalAlignment="Left" Name="label1" Margin="5" VerticalAlignment="Top" Width="110" />
+            <TextBox Height="26" HorizontalAlignment="Left" Name="textBox1" Margin="5" VerticalAlignment="Top" Width="300" KeyUp="textBox1_KeyUp" ToolTip="Use &quot;Info[CR][LF]&quot;, &quot;A[CR][LF]&quot;, &quot;Ea[CR][LF]&quot; or &quot;Test[CR][LF]&quot; as Test Command" />
+            <Button Content="send to Device" Height="26" Name="button1" Margin="5" VerticalAlignment="Top" Width="109" Click="button1_Click" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="simulated Answer" Height="26" HorizontalAlignment="Left" Margin="5" Name="label2" VerticalAlignment="Top" Width="110" />
+            <TextBox Height="90" HorizontalAlignment="Left" Margin="5" Name="textBox2" VerticalAlignment="Top" Width="300" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" />
+        </StackPanel>
+        <Expander Header="Learn Mode Section" Margin="5" Background="#FFFFF2F2">
+            <StackPanel>
+                <CheckBox Content="learning mode activated" Height="19" HorizontalAlignment="Left" Margin="10,10,5,0" Name="checkBox1" VerticalAlignment="Top" Width="161" Checked="checkBox1_Checked" Unchecked="checkBox1_Unchecked" />
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Label Content="manual Answer" Height="34" HorizontalAlignment="Left" Margin="5" Name="label3" VerticalAlignment="Top" Width="110" />
+                    <TextBox Height="88" HorizontalAlignment="Left" Margin="5" Name="textBox3" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible" Width="300" AcceptsReturn="True" />
+                    <StackPanel Orientation="Vertical">
+                        <Button Height="41" HorizontalAlignment="Left" Margin="5" Name="button2" VerticalAlignment="Top" Width="109" Click="button2_Click">
+                        <TextBlock TextAlignment="Center">send answer<LineBreak/>(instead of device)</TextBlock>
+                        </Button>
+                        <Button Content="Answer complete" Height="41" HorizontalAlignment="Left" Margin="5" Name="button3" VerticalAlignment="Top" Width="109" Click="button3_Click" />
+                    </StackPanel>
+                </StackPanel>
+                <GroupBox Header="Settings" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Seperators" Height="26" HorizontalAlignment="Left" Margin="10,5,0,5" Name="label4" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Right" />
+                        <TextBox HorizontalAlignment="Left" Margin="0,5,5,5" Name="textBox4" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Width="110" Height="90" AcceptsReturn="True" />
+                        <Label Content="Error Answer" Height="26" HorizontalAlignment="Right" Margin="15,5,0,5" Name="label5" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Right" />
+                        <TextBox AcceptsReturn="True" HorizontalAlignment="Left" Margin="0,5,5,5" Name="textBox5" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Width="110" />
+                        <Button Content="apply changes" Height="25" HorizontalAlignment="left" VerticalAlignment="Bottom" Margin="5" Name="button4" Width="104" Click="button4_Click" />
+                    </StackPanel>
+                </GroupBox>                
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</Window>

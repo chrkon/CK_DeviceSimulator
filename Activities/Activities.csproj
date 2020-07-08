@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{617487DB-EBAE-4C2C-8C8E-F60ADF70E982}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ebcDeviceSimulator.Activities</RootNamespace>
+    <AssemblyName>ebcDeviceSimulatorActivities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCommand.cs" />
+    <Compile Include="Counter.cs" />
+    <Compile Include="ebc\Asynchronizer.cs" />
+    <Compile Include="ebc\JoinMessages.cs" />
+    <Compile Include="ebc\SendTriggerSignal.cs" />
+    <Compile Include="ebc\SplitMessage.cs" />
+    <Compile Include="ebc\Switch.cs" />
+    <Compile Include="ebc\SyncWithGUI.cs" />
+    <Compile Include="ebc\TimeSpanBetweenSignals.cs" />
+    <Compile Include="GetCommandResponse.cs" />
+    <Compile Include="LoadData.cs" />
+    <Compile Include="ebc\SelectItem.cs" />
+    <Compile Include="SaveData.cs" />
+    <Compile Include="SendAnswers.cs" />
+    <Compile Include="SeparateDataBlock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ebc\ConvertControlBytes.cs" />
+    <Compile Include="SplitDeviceData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataTypes\DataTypes.csproj">
+      <Project>{74835B80-3702-45CE-A0BA-5EA69D8349BE}</Project>
+      <Name>DataTypes</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
