@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO.Ports;
+using ebcDeviceSimulator.GUI.Properties;
 
 namespace ebcDeviceSimulator.GUI
 {
@@ -136,19 +137,19 @@ namespace ebcDeviceSimulator.GUI
         private void Init()
         {
             // Start process by loading the DeviceDefinitionFile
-            string filename = @".\DemoData\Test.xml";
+            string filename = Settings.Default.DeviceDefinitionFile ?? @".\DemoData\Test.xml";
             this.loadDefinition(filename);
 
             // In den Simulations Modus schalten
             this.GUI_ToSimulationMode();
 
             // Com Ports öffnen
-            RS232_PC.PortName = "COM9";
-            RS232_PC.BaudRate = 9600;
+            RS232_PC.PortName = Settings.Default.COMPort_Simulator_PC;
+            RS232_PC.BaudRate = Settings.Default.COMPort_Simulator_PC_Baud;
             RS232_PC.Open();
 
-            RS232_Device.PortName = "COM6";
-            RS232_Device.BaudRate = 9600;
+            RS232_Device.PortName = Settings.Default.COMPort_Simulator_Device;
+            RS232_Device.BaudRate = Settings.Default.COMPort_Simulator_Device_Baud;
             // RS232_Device.Open();
 
         }
